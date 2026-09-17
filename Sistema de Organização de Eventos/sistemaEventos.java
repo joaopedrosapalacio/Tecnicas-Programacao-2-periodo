@@ -1,6 +1,19 @@
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class sistemaEventos {
     public static void main(String[] args) {
         
+        List<Espaco> espacolista = new ArrayList<>();
+        espacolista.add(new Espaco(100, "Rua 4", "Centro de Festa", "Aniversario"));
+        espacolista.add(new Espaco(300, "Avenida principal", "Espaco Lazer", "Festa"));
+        espacolista.add(new Espaco(200, "Centro de Goiania", "Centro Empresarial", "Reuniao"));
+
+        for (Espaco espacos : espacolista) {
+            System.out.println(espacos.getNome());
+        }
+
         Espaco espaco = new Espaco(
             300,
             "Av. T-10, Goiânia",
@@ -37,5 +50,17 @@ public class sistemaEventos {
 
         evento.exibirDados();
         evento.verificarCapacidade();
+
+        try {
+            Organizador organizador3 = new Organizador(
+                "PTR122",
+                "Organizador de Festas",
+                null
+            );
+        } catch (NullPointerException e) {
+            System.out.println("Nao e possivel acessar um nome nulo");
+        } finally {
+            System.out.println("Sistema continuando...");
+        }
     }
 }
