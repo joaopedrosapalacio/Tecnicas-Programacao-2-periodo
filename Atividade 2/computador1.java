@@ -1,4 +1,4 @@
-public class Computador {
+public class computador1 {
     String marca;
     String cor;
     boolean ligado;

@@ -7,11 +7,15 @@ public class Funcionario {
 
     public Funcionario() {}
 
-    public Funcionario(int matricula, String nome, String cargo, double salario) {
+    public Funcionario(String nome, double salario) {
         this.matricula = matricula;
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
+    }
+
+    public Funcionario(int matricula2, String nome2, String cargo2, double salario2) {
+        //TODO Auto-generated constructor stub
     }
 
     public int getMatricula() {

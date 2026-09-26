@@ -12,4 +12,9 @@ public class Eletronico extends Produto {
     public void detalharGarantia() {
         System.out.println("Garantia: " + this.garantiaMeses + " meses");
     }
+
+    public void exibirEtiqueta() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'exibirEtiqueta'");
+    }
 }

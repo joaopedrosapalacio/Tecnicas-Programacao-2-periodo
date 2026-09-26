@@ -5,7 +5,7 @@ public class Aluno {
     private int idade;
     private String email;
 
-    public Aluno (String nome, int matricula, int idade, String email) {
+    public Aluno (String nome, int matricula, int idade, int i, String email) {
         this.nome = nome;
         this.matricula = matricula;
         setIdade(idade);
@@ -60,5 +60,15 @@ public class Aluno {
         } else {
             return false;
         }
+    }
+
+    public void estudar() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'estudar'");
+    }
+
+    public void apresentar() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'apresentar'");
     }
 }

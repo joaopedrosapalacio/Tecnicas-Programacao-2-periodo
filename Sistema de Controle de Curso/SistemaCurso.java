@@ -5,7 +5,7 @@ public class SistemaCurso {
             "Joao",
             1111,
             17,
-            "joao@gmail.com"
+            0, "joao@gmail.com"
         );
 
         aluno.exibirDados();
@@ -15,7 +15,7 @@ public class SistemaCurso {
             "Maria",
             2222,
             24,
-            "maria@gmail.com"
+            0, "maria@gmail.com"
         );
 
         aluno2.exibirDados();

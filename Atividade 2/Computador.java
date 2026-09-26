@@ -6,7 +6,7 @@ public class Computador {
     private String defeito;
 
 
-    public Computador(String marca, String modelo, String numeroSerie, String defeito) {
+    public Computador() {
         this.marca = marca;
         this.modelo = modelo;
         this.numeroSerie = numeroSerie;

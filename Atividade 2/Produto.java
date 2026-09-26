@@ -8,7 +8,7 @@ public class Produto {
 
     public Produto() {}
 
-    public Produto(String nome, double preco, String validade, String tipo, String marca) {
+    public Produto(String nome, double preco) {
         this.nome = nome;
         this.preco = preco;
         this.validade = validade;

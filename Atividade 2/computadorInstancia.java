@@ -27,7 +27,7 @@ public class computadorInstancia {
                     System.out.print("Digite o defeito relatado: ");
                     String defeito = scanner.nextLine();
                     
-                    comp = new Computador(marca, modelo, numeroSerie, defeito);
+                    comp = new Computador();
                     System.out.println("Computador cadastrado com sucesso!\n");
                 }
                 case 2 -> {

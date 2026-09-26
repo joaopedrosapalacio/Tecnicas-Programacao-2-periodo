@@ -11,7 +11,7 @@ public class Pessoa {
 
     public Pessoa(int id, String nome, String cpf) {
         this.id = id;
-        setNome(nome);
+        this.setNome(nome);
         this.cpf = cpf;
     }
 

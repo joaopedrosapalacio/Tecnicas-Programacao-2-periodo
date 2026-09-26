@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Venda {
 
+    private static final double subtotalGeral = 0;
+
     public static String abreviarCategoria(String categoria) {
         String sigla;
 
