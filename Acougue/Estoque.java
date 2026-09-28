@@ -1,24 +1,23 @@
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-public class Estoque{
+public class Estoque {
 
-    private List <Produto> produtos = new ArrayList<>();
+    private ProdutoV2 produto;
     private double qntdAtual;
-    private double qntdMinima;
     private Date ultimoRestoque;
     private String codigoRegistro;
-    private Date dataValidade;
     private String classe;
 
-    public Estoque() {
-        this.classe = classe;
-        this.codigoRegistro = codigoRegistro;
-        this.dataValidade = dataValidade;
+    public Estoque(ProdutoV2 produto, double qntdAtual, String codigoRegistro, String classe) {
+        this.produto = produto;
         this.setQntdAtual(qntdAtual);
-        this.setQntdMinima(qntdMinima);
-        this.ultimoRestoque = ultimoRestoque;
+        this.ultimoRestoque = new Date();
+        this.setCodigoRegistro(codigoRegistro);
+        this.setClasse(classe);
+    }
+
+    public ProdutoV2 getProduto() {
+        return produto;
     }
 
     public double getQntdAtual() {
@@ -27,20 +26,10 @@ public class Estoque{
 
     public void setQntdAtual(double qntdAtual) {
         if (qntdAtual < 0) {
-            throw new IllegalArgumentException("A quantidade atual nao pode ser negativo");
+            System.out.println("A quantidade atual nao pode ser menor que 0");
+        } else {
+            this.qntdAtual = qntdAtual;
         }
-        this.qntdAtual = qntdAtual;
-    }
-
-    public double getQntdMinima() {
-        return qntdMinima;
-    }
-    
-    public void setQntdMinima(double qntdMinima) {
-        if (qntdMinima < 0) {
-            throw new IllegalArgumentException("Quantidade minima invalida");
-        }
-        this.qntdMinima = qntdMinima;
     }
 
     public Date getUltimoRestoque() {
@@ -52,15 +41,11 @@ public class Estoque{
     }
 
     public void setCodigoRegistro(String codigoRegistro) {
-        this.codigoRegistro = codigoRegistro;
-    }
-
-    public Date getDataValidade() {
-        return dataValidade;
-    }
-
-    public void setDataValidade(Date dataValidade) {
-        this.dataValidade = dataValidade;
+        if (codigoRegistro == null) {
+            System.out.println("O codigo de registro nao pode ser nulo");
+        } else {
+            this.codigoRegistro = codigoRegistro;
+        }
     }
 
     public String getClasse() {
@@ -68,12 +53,20 @@ public class Estoque{
     }
 
     public void setClasse(String classe) {
-        this.classe = classe;
+        if (classe == null) {
+            System.out.println("A classe nao pode ser nula");
+        } else {
+            this.classe = classe;
+        }
     }
 
     public void entradaEstoque(double quantidade) {
-        this.qntdAtual += quantidade;
-        this.ultimoRestoque = new Date();
+        if (quantidade <= 0) {
+            System.out.println("A quantidade de entrada deve ser maior que 0");
+        } else {
+            this.qntdAtual += quantidade;
+            this.ultimoRestoque = new Date();
+        }
     }
 
     public void saidaEstoque(double quantidade) {
@@ -82,13 +75,5 @@ public class Estoque{
         } else {
             System.out.println("Quantidade insuficiente em estoque.");
         }
-    }
-
-    public boolean estaVencido() {
-        return dataValidade != null && dataValidade.before(new Date());
-    }
-
-    public boolean estoqueBaixo() {
-        return qntdAtual <= qntdMinima;
     }
 }
